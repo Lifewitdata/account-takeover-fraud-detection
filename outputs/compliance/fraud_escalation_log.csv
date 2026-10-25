@@ -1,0 +1,121 @@
+incident_id,incident_type,user_id,first_attack_ts,first_signal_ts,first_loss_ts,fraud_value_usd,preventable_value_usd,action_window_min,first_signal_rule,tier,stoppable_at_target_sla,customer_notice_required
+ATO-U02669,account_takeover,U02669,2025-11-09 18:16:41,2025-11-09 18:16:41,2025-11-10 02:44:41,1086.01,1086.01,508.0,R03_new_device_step_up,T1 fraud nodal officer,True,True
+ATO-U04561,account_takeover,U04561,2025-02-19 09:58:20,2025-02-19 09:58:20,2025-02-19 20:11:20,953.13,953.13,613.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U02288,account_takeover,U02288,2025-02-04 07:27:19,2025-02-04 07:27:19,2025-02-04 12:45:19,880.7,880.7,318.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U00196,account_takeover,U00196,2025-12-17 14:41:11,2025-12-17 14:41:11,2025-12-17 15:46:11,867.5,867.5,65.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U01848,account_takeover,U01848,2025-08-28 02:35:59,2025-08-28 02:35:59,2025-08-28 06:30:59,811.34,811.34,235.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U03258,account_takeover,U03258,2025-10-05 03:19:45,2025-10-05 03:19:45,2025-10-05 05:27:45,779.87,779.87,128.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U03252,account_takeover,U03252,2025-01-07 14:09:15,2025-01-07 14:09:15,2025-01-07 15:36:15,764.56,764.56,87.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U02399,account_takeover,U02399,2025-04-24 16:26:44,2025-04-24 16:26:44,2025-04-25 03:16:44,730.59,730.59,650.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U00618,account_takeover,U00618,2025-07-10 00:51:17,2025-07-10 00:51:17,2025-07-10 04:38:17,656.9,656.9,227.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U03253,account_takeover,U03253,2025-11-05 06:08:11,2025-11-05 06:08:11,2025-11-05 11:11:11,633.61,633.61,303.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U01381,account_takeover,U01381,2025-06-25 06:12:58,2025-06-25 06:12:58,2025-06-25 19:03:58,628.77,628.77,771.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U02151,account_takeover,U02151,2025-05-03 04:42:37,2025-05-03 04:42:37,2025-05-03 09:01:37,624.4,624.4,259.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U04556,account_takeover,U04556,2025-04-13 01:45:27,2025-04-13 01:45:27,2025-04-13 17:32:27,615.53,615.53,947.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U00152,account_takeover,U00152,2025-02-26 16:40:37,2025-02-26 16:40:37,2025-02-27 00:42:37,603.6,603.6,482.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U02263,account_takeover,U02263,2025-08-21 18:48:06,2025-08-21 18:48:06,2025-08-22 00:07:06,579.14,579.14,319.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U04253,account_takeover,U04253,2025-02-13 17:32:10,2025-02-13 17:32:10,2025-02-14 00:03:10,575.59,575.59,391.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U04692,account_takeover,U04692,2025-05-05 22:55:34,2025-05-05 22:55:34,2025-08-29 05:13:15,575.43,575.43,165977.7,R01_ip_velocity_5u10m,T2 team lead,True,True
+ATO-U01194,account_takeover,U01194,2025-12-25 23:00:22,2025-12-25 23:00:22,2025-12-26 02:24:22,559.66,559.66,204.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U04228,account_takeover,U04228,2025-02-19 05:28:28,2025-02-19 05:28:28,2025-02-19 08:49:28,555.5,555.5,201.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U01398,account_takeover,U01398,2025-11-17 10:05:15,2025-11-17 10:05:15,2025-11-17 12:59:15,542.1,542.1,174.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U03761,account_takeover,U03761,2025-05-31 12:05:28,2025-05-31 12:05:28,2025-05-31 16:10:28,520.15,520.15,245.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U04149,account_takeover,U04149,2025-08-23 13:31:04,2025-08-23 13:31:04,2025-08-23 20:20:04,514.23,514.23,409.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U01047,account_takeover,U01047,2025-08-29 14:58:43,2025-08-29 14:58:43,2025-08-30 01:09:43,512.13,512.13,611.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U03471,account_takeover,U03471,2025-09-24 18:25:18,2025-09-24 18:25:18,2025-09-25 08:32:18,507.4,507.4,847.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U03050,account_takeover,U03050,2025-03-13 19:20:32,2025-03-13 19:20:32,2025-03-13 20:31:32,505.83,505.83,71.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U03970,account_takeover,U03970,2025-01-10 18:11:03,2025-01-10 18:11:03,2025-01-11 09:02:03,497.5,497.5,891.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U01792,account_takeover,U01792,2025-01-03 20:06:09,2025-01-03 21:12:09,2025-01-04 09:52:09,492.32,492.32,760.0,R05_reset_then_payout,T2 team lead,True,True
+ATO-U03971,account_takeover,U03971,2025-07-11 14:58:31,2025-07-11 14:58:31,2025-12-01 04:23:18,485.0,485.0,205284.8,R01_ip_velocity_5u10m,T2 team lead,True,True
+ATO-U02564,account_takeover,U02564,2025-01-11 07:36:01,2025-01-11 10:24:01,2025-01-11 09:36:01,484.18,202.93,-48.0,R05_reset_then_payout,T2 team lead,False,True
+ATO-U00807,account_takeover,U00807,2025-05-05 22:57:53,2025-05-05 22:57:53,2025-12-05 22:24:00,471.83,471.83,308126.1,R01_ip_velocity_5u10m,T2 team lead,True,True
+ATO-U03001,account_takeover,U03001,2025-05-02 13:45:48,2025-05-02 13:45:48,2025-05-02 19:09:48,467.05,467.05,324.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U00638,account_takeover,U00638,2025-09-19 20:23:51,2025-09-19 20:23:51,2025-09-19 22:14:51,457.09,457.09,111.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U01959,account_takeover,U01959,2025-04-17 05:31:35,2025-04-17 05:31:35,2025-08-17 04:03:39,444.13,444.13,175592.1,R01_ip_velocity_5u10m,T2 team lead,True,True
+ATO-U03617,account_takeover,U03617,2025-06-22 03:52:20,2025-06-22 03:52:20,2025-06-22 05:51:20,443.12,443.12,119.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U00736,account_takeover,U00736,2025-09-10 14:34:24,2025-09-10 14:34:24,2025-09-10 19:28:24,434.45,434.45,294.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U02468,account_takeover,U02468,2025-05-19 21:14:12,2025-05-19 21:14:12,2025-05-20 13:11:12,431.17,431.17,957.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U00567,account_takeover,U00567,2025-01-19 01:51:33,2025-01-19 02:32:33,2025-01-19 15:10:33,429.36,429.36,758.0,R05_reset_then_payout,T2 team lead,True,True
+ATO-U01760,account_takeover,U01760,2025-01-07 12:27:54,2025-01-07 12:27:54,2025-01-08 06:00:54,423.55,423.55,1053.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U03510,account_takeover,U03510,2025-09-28 17:40:09,2025-09-28 17:40:09,2025-09-28 23:42:09,421.88,421.88,362.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U04314,account_takeover,U04314,2025-02-28 08:55:06,2025-02-28 08:55:06,2025-02-28 10:06:06,416.13,416.13,71.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U00217,account_takeover,U00217,2025-08-23 22:55:34,2025-08-23 22:55:34,2025-08-24 10:05:34,415.61,415.61,670.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U02618,account_takeover,U02618,2025-02-06 17:28:38,2025-02-06 19:13:38,2025-02-07 03:12:38,413.13,413.13,479.0,R05_reset_then_payout,T2 team lead,True,True
+ATO-U00412,account_takeover,U00412,2025-06-28 07:00:22,2025-06-28 07:00:22,2025-11-20 01:43:12,408.97,408.97,208482.8,R01_ip_velocity_5u10m,T2 team lead,True,True
+ATO-U02272,account_takeover,U02272,2025-03-26 17:51:57,2025-03-26 17:51:57,2025-04-30 13:20:23,407.84,407.84,50128.4,R01_ip_velocity_5u10m,T2 team lead,True,True
+ATO-U00500,account_takeover,U00500,2025-03-26 17:49:49,2025-03-26 17:49:49,2025-11-18 10:59:17,404.82,404.82,340869.5,R01_ip_velocity_5u10m,T2 team lead,True,True
+ATO-U03666,account_takeover,U03666,2025-01-03 13:28:45,2025-01-03 15:04:45,2025-01-04 06:14:45,403.31,403.31,910.0,R05_reset_then_payout,T2 team lead,True,True
+ATO-U02083,account_takeover,U02083,2025-04-12 09:39:25,2025-04-12 09:39:25,2025-04-12 11:22:25,398.15,398.15,103.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U01831,account_takeover,U01831,2025-04-08 04:04:25,2025-04-08 04:04:25,2025-04-08 19:38:25,393.93,393.93,934.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U01682,account_takeover,U01682,2025-03-15 08:11:15,2025-03-15 08:11:15,2025-10-15 18:30:43,369.98,369.98,308779.5,R01_ip_velocity_5u10m,T2 team lead,True,True
+ATO-U03834,account_takeover,U03834,2025-06-24 21:12:33,2025-06-24 21:12:33,2025-06-25 17:07:33,368.13,368.13,1195.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U00062,account_takeover,U00062,2025-01-06 09:52:19,2025-01-06 09:52:19,2025-01-06 21:31:19,367.78,367.78,699.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U04053,account_takeover,U04053,2025-02-28 06:54:30,2025-02-28 06:54:30,2025-02-28 12:31:30,367.53,367.53,337.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U03138,account_takeover,U03138,2025-04-11 04:01:53,2025-04-11 04:01:53,2025-04-11 22:05:53,356.95,356.95,1084.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U00402,account_takeover,U00402,2025-08-30 12:00:49,2025-08-30 12:00:49,2025-08-30 20:03:49,350.54,350.54,483.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U02796,account_takeover,U02796,2025-01-16 18:35:17,2025-01-16 18:35:17,2025-01-17 12:53:17,341.71,341.71,1098.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U03597,account_takeover,U03597,2025-12-25 20:04:34,2025-12-25 20:04:34,2025-12-26 06:35:34,340.59,340.59,631.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U02430,account_takeover,U02430,2025-08-23 19:31:50,2025-08-23 19:31:50,2025-08-24 05:18:50,324.5,324.5,587.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U01662,account_takeover,U01662,2025-01-08 04:25:22,2025-01-08 05:59:22,2025-01-08 06:14:22,324.11,324.11,15.0,R05_reset_then_payout,T2 team lead,False,True
+ATO-U03951,account_takeover,U03951,2025-08-08 19:23:08,2025-08-08 19:23:08,2025-11-01 02:16:15,318.86,318.86,121373.1,R01_ip_velocity_5u10m,T2 team lead,True,True
+ATO-U04512,account_takeover,U04512,2025-09-24 04:08:18,2025-09-24 04:08:18,2025-09-24 19:28:18,318.4,318.4,920.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U04436,account_takeover,U04436,2025-11-26 13:34:55,2025-11-26 13:34:55,2025-11-27 10:44:55,304.12,304.12,1270.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U01730,account_takeover,U01730,2025-10-25 04:45:50,2025-10-25 04:45:50,2025-10-25 09:42:50,299.31,299.31,297.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U04286,account_takeover,U04286,2025-04-02 15:06:52,2025-04-02 15:06:52,2025-04-02 21:52:52,292.33,292.33,406.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U04245,account_takeover,U04245,2025-04-17 05:31:14,2025-04-17 05:31:14,2025-12-27 05:51:31,289.06,289.06,365780.3,R01_ip_velocity_5u10m,T2 team lead,True,True
+ATO-U03263,account_takeover,U03263,2025-05-27 08:56:11,2025-05-27 08:56:11,2025-05-27 20:18:11,284.75,284.75,682.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U04820,account_takeover,U04820,2025-10-01 04:00:01,2025-10-01 04:00:01,2025-10-01 09:46:01,264.13,264.13,346.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U03608,account_takeover,U03608,2025-11-10 12:11:28,2025-11-10 12:11:28,2025-11-10 16:49:28,257.39,257.39,278.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U01807,account_takeover,U01807,2025-08-04 12:18:58,2025-08-04 12:18:58,2025-08-04 20:15:58,257.1,257.1,477.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U02762,account_takeover,U02762,2025-01-20 15:10:09,2025-01-20 17:13:09,2025-01-20 19:50:09,256.93,256.93,157.0,R05_reset_then_payout,T2 team lead,True,True
+ATO-U01927,account_takeover,U01927,2025-12-25 02:25:49,2025-12-25 02:25:49,2025-12-25 05:56:49,252.63,252.63,211.0,R03_new_device_step_up,T2 team lead,True,True
+ATO-U04442,account_takeover,U04442,2025-01-19 02:19:14,2025-01-19 02:19:14,2025-01-19 06:48:14,248.99,248.99,269.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U00349,account_takeover,U00349,2025-01-08 20:24:40,2025-01-08 22:41:40,2025-01-08 22:57:40,246.49,246.49,16.0,R05_reset_then_payout,T3 analyst,False,True
+ATO-U00846,account_takeover,U00846,2025-04-23 09:33:10,2025-04-23 09:33:10,2025-04-23 16:07:10,244.89,244.89,394.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U04840,account_takeover,U04840,2025-03-17 01:12:33,2025-03-17 01:12:33,2025-03-17 08:09:33,237.65,237.65,417.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U02683,account_takeover,U02683,2025-03-31 09:03:36,2025-03-31 09:03:36,2025-03-31 15:05:36,233.76,233.76,362.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U01459,account_takeover,U01459,2025-01-14 09:55:26,2025-01-14 09:55:26,2025-01-15 02:15:26,225.56,225.56,980.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U02845,account_takeover,U02845,2025-07-29 13:17:48,2025-07-29 13:17:48,2025-07-29 22:42:48,225.23,225.23,565.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U01962,account_takeover,U01962,2025-06-11 14:44:56,2025-06-11 14:44:56,2025-06-11 17:18:56,218.35,218.35,154.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U02186,account_takeover,U02186,2025-11-01 09:34:14,2025-11-01 09:34:14,2025-11-01 11:57:14,210.02,210.02,143.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U02102,account_takeover,U02102,2025-11-16 20:25:56,2025-11-16 20:25:56,2025-11-17 08:35:56,205.05,205.05,730.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U01178,account_takeover,U01178,2025-07-01 11:31:17,2025-07-01 11:31:17,2025-07-01 14:51:17,201.94,201.94,200.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U00200,account_takeover,U00200,2025-10-26 21:27:52,2025-10-26 21:27:52,2025-10-27 08:18:52,199.95,199.95,651.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U01429,account_takeover,U01429,2025-08-05 19:59:44,2025-08-05 19:59:44,2025-08-05 21:02:44,199.03,199.03,63.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U01542,account_takeover,U01542,2025-04-29 10:34:48,2025-04-29 10:34:48,2025-04-29 14:01:48,192.1,192.1,207.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U01786,account_takeover,U01786,2025-06-23 01:25:24,2025-06-23 01:25:24,2025-06-23 15:50:24,187.3,187.3,865.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U03429,account_takeover,U03429,2025-01-13 21:35:47,2025-01-13 21:35:47,2025-01-14 10:49:47,184.91,184.91,794.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U04325,account_takeover,U04325,2025-01-08 01:31:01,2025-01-08 03:24:01,2025-01-08 11:16:01,184.2,184.2,472.0,R05_reset_then_payout,T3 analyst,True,True
+ATO-U00818,account_takeover,U00818,2025-05-14 23:11:51,2025-05-14 23:11:51,2025-05-15 02:16:51,173.46,173.46,185.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U04168,account_takeover,U04168,2025-02-24 16:18:02,2025-02-24 16:18:02,2025-07-13 22:45:46,170.4,170.4,200547.7,R01_ip_velocity_5u10m,T3 analyst,True,True
+ATO-U02897,account_takeover,U02897,2025-01-20 06:56:04,2025-01-20 06:56:04,2025-01-20 16:12:04,170.2,170.2,556.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U03901,account_takeover,U03901,2025-01-24 19:21:39,2025-01-24 19:21:39,2025-01-25 04:34:39,168.7,168.7,553.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U00218,account_takeover,U00218,2025-06-26 15:22:12,2025-06-26 15:22:12,2025-06-27 13:19:12,155.19,155.19,1317.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U04278,account_takeover,U04278,2025-12-09 04:36:25,2025-12-09 04:36:25,2025-12-09 07:48:25,151.62,151.62,192.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U01825,account_takeover,U01825,2025-08-15 21:05:32,2025-08-15 21:05:32,2025-08-16 15:06:32,150.6,150.6,1081.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U03943,account_takeover,U03943,2025-06-23 12:55:42,2025-06-23 12:55:42,2025-06-24 04:44:42,150.31,150.31,949.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U02586,account_takeover,U02586,2025-05-06 04:47:49,2025-05-06 04:47:49,2025-05-07 00:19:49,144.62,144.62,1172.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U02904,account_takeover,U02904,2025-02-18 05:21:43,2025-02-18 05:21:43,2025-08-21 22:26:43,134.94,134.94,265985.0,R01_ip_velocity_5u10m,T3 analyst,True,True
+ATO-U00966,account_takeover,U00966,2025-08-22 07:43:16,2025-08-22 07:43:16,2025-08-23 03:55:16,129.97,129.97,1212.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U02566,account_takeover,U02566,2025-03-17 03:13:14,2025-03-17 03:13:14,2025-03-17 06:14:14,125.98,125.98,181.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U02425,account_takeover,U02425,2025-10-08 00:19:41,2025-10-08 00:19:41,2025-10-08 10:28:41,125.6,125.6,609.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U00344,account_takeover,U00344,2025-04-13 22:16:19,2025-04-13 22:16:19,2025-04-13 23:22:19,123.44,123.44,66.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U01982,account_takeover,U01982,2025-05-05 22:55:08,2025-05-05 22:55:08,2025-07-27 12:12:07,123.26,123.26,118877.0,R01_ip_velocity_5u10m,T3 analyst,True,True
+ATO-U00895,account_takeover,U00895,2025-06-28 07:00:48,2025-06-28 07:00:48,2025-08-27 15:32:12,119.02,119.02,86911.4,R01_ip_velocity_5u10m,T3 analyst,True,True
+ATO-U04312,account_takeover,U04312,2025-07-12 23:40:52,2025-07-12 23:40:52,2025-07-13 05:43:52,116.91,116.91,363.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U04774,account_takeover,U04774,2025-04-17 05:34:01,2025-04-17 05:34:01,2025-12-05 04:31:26,115.55,115.55,334017.4,R01_ip_velocity_5u10m,T3 analyst,True,True
+ATO-U00835,account_takeover,U00835,2025-11-29 05:10:14,2025-11-29 05:10:14,2025-11-29 12:20:14,115.48,115.48,430.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U00241,account_takeover,U00241,2025-09-25 11:27:48,2025-09-25 11:27:48,2025-09-25 17:02:48,112.51,112.51,335.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U01628,account_takeover,U01628,2025-06-29 02:17:08,2025-06-29 02:17:08,2025-06-29 10:00:08,111.34,111.34,463.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U01600,account_takeover,U01600,2025-01-10 18:58:59,2025-01-10 18:58:59,2025-01-11 12:17:59,107.28,107.28,1039.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U00150,account_takeover,U00150,2025-01-11 21:55:26,2025-01-12 00:02:26,2025-01-12 01:25:26,104.33,104.33,83.0,R05_reset_then_payout,T3 analyst,True,True
+ATO-U01171,account_takeover,U01171,2025-05-18 15:05:31,2025-05-18 15:05:31,2025-05-19 04:32:31,97.63,97.63,807.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U00918,account_takeover,U00918,2025-03-19 09:14:17,2025-03-19 09:14:17,2025-03-19 22:40:17,95.58,95.58,806.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U03606,account_takeover,U03606,2025-06-24 22:14:22,2025-06-24 22:14:22,2025-06-25 05:31:22,85.69,85.69,437.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U03058,account_takeover,U03058,2025-03-15 08:09:40,2025-03-15 08:09:40,2025-04-01 10:37:19,75.43,75.43,24627.7,R01_ip_velocity_5u10m,T3 analyst,True,True
+ATO-U02428,account_takeover,U02428,2025-01-01 03:51:06,2025-01-01 06:35:06,2025-01-02 02:07:06,70.29,70.29,1172.0,R05_reset_then_payout,T3 analyst,True,True
+ATO-U03583,account_takeover,U03583,2025-01-09 11:09:11,2025-01-09 11:09:11,2025-01-10 01:01:11,69.67,69.67,832.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U02976,account_takeover,U02976,2025-12-13 10:56:58,2025-12-13 10:56:58,2025-12-13 15:23:58,65.14,65.14,267.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U04593,account_takeover,U04593,2025-02-04 19:23:42,2025-02-04 19:23:42,2025-02-05 05:12:42,59.77,59.77,589.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U00364,account_takeover,U00364,2025-11-03 10:56:17,2025-11-03 10:56:17,2025-11-04 09:49:17,58.45,58.45,1373.0,R03_new_device_step_up,T3 analyst,True,True
+ATO-U04100,account_takeover,U04100,2025-10-31 21:45:00,2025-10-31 21:45:00,2025-11-01 13:53:00,49.88,49.88,968.0,R03_new_device_step_up,T3 analyst,True,True

@@ -1,0 +1,23 @@
+line,metric,value,unit,basis,source_or_assumption
+fraud_value_whole_period,"Labelled fraudulent transaction value, Jan-Dec 2025",93476.68,USD,measured,data/transactions.csv where is_fraud_txn = 1
+fraud_value_test_window,Labelled fraudulent value inside the held-out Oct-Dec window,10232.18,USD,measured,scored payment test frame
+accounts_affected,Accounts whose transactions are labelled fraud,220.0,count,measured,distinct user_id on labelled rows
+value_still_moving_after_first_signal,Value that left an ATO account after a registry rule had already fired on it,40727.43,USD,measured,incident preventable_value_usd
+expected_recovery,Value a recovery process claws back,23369.17,USD,derived,assumptions.loss.recovery_rate_on_confirmed_fraud
+net_financial_loss,Fraud value left after recovery,70107.51,USD,derived,gross x (1 - recovery rate)
+dispute_handling_cost,Chargeback handling on affected accounts,9900.0,USD,derived,one dispute per account x dispute_cost_per_case_usd
+account_remediation_cost,Re-verification and document re-collection,1960.0,USD,derived,incidents x account_remediation_minutes at analyst rate
+non_financial_harm,Reputation and distress cost,0.0,USD,assumption,held at zero deliberately; no invented reputation figure
+total_fraud_cost,"Cost of the fraud itself, before any detection spend",81967.51,USD,derived,net loss + dispute + remediation + non-financial
+cost_per_confirmed_incident,Total fraud cost per confirmed ATO incident,683.06,USD/incident,derived,120 incidents
+median_fraud_case,Median fraudulent transaction,54.98,USD,measured,labelled rows
+legit_txn_value_in_period,"Total legitimate payment volume, the denominator any hold or block puts at risk of delay",2221781.11,USD,measured,unlabelled rows in the period
+programme_control_cost_deduplicated,"Staff and customer cost of running the whole rule set across the test window, one case per account",9457.25,USD,derived,cost_model.yaml actions x alerts
+programme_control_cost_naive_sum,"The same cost if each rule were billed standalone, shown because it is what a per-rule table invites a reader to do",11540.45,USD,derived,"sum of control_cost.csv, overstates by double-billing shared cases"
+review_cases_opened,Distinct accounts a review rule sent to the queue,478.0,count,measured,"union of review-rule hits, deduplicated by account"
+wrongly_actioned_cost,Cost attributable to false positives alone,2559.92,USD,derived,"appeal + support + abandoned revenue, charged once per row"
+customers_wrongly_blocked_churned,Legitimate customers estimated to leave after a wrong hard block,0.0,count,assumption,"hard_block_churn_rate, priced in people not dollars"
+recovered_value,Fraud value the rule set touched and recovery brought back,4842.63,USD,derived,deduplicated touched value x recovery rate
+control_cost_per_dollar_recovered,Programme cost per dollar recovered,1.95,ratio,derived,programme control cost / recovered value
+rules_without_measured_benefit,Registry rules that caught no labelled fraud in the window,1.0,count,measured,verdict column
+fraud_value_vs_control_cost,Test-window fraud value divided by what the controls cost to catch it,1.08,ratio,derived,"the funding question, answered with both numbers visible"

@@ -1,0 +1,5 @@
+month,rule_id,surface,step_up_prompts,prompts_on_fraud,prompts_on_legitimate,est_abandoned_sessions,exemption_applied
+2025-10,R03_new_device_step_up,login,996,93,903,36.1,none
+2025-11,R03_new_device_step_up,login,1382,71,1311,52.4,none
+2025-12,R03_new_device_step_up,login,1524,189,1335,53.4,none
+2025-11,R06_new_device_payout,payment,1,0,1,0.0,none

@@ -1,0 +1,10 @@
+root_cause,incidents_evidenced,accounts_evidenced,root_cause_name,status
+RC-01,102,102,Session survived a password reset,evidenced
+RC-02,120,120,First-seen device authenticated without step-up,evidenced
+RC-03,25,172,No throttle or breached-credential screening on the login endpoint,evidenced
+RC-04,10,10,Dormant account reactivated without re-verification,evidenced
+RC-05,101,101,Instant payout in a high-conversion category,evidenced
+RC-06,0,0,No device binding checked at payment time,not exercised by this dataset
+RC-07,5,100,Confirmed account did not trigger its device neighbourhood,evidenced
+RC-08,0,0,SMS reset granted without a device-possession check,not exercised by this dataset
+RC-09,5,100,No registration velocity control at enrolment,evidenced

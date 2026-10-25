@@ -36,11 +36,24 @@ and what it would cost to act on them.
 ## Risks & caveats
 
 - Analysis is on **synthetic data with clean-cut fraud patterns** — real attacker behavior
-  overlaps more with legitimate behavior, so expect lower precision and re-tune thresholds
-  monthly.
+  overlaps more with legitimate behavior, so expect lower precision. Thresholds are re-checked
+  by a weekly monitoring job (rule precision decay, feature drift, reviewer load) rather than
+  on a fixed re-tune calendar — see `outputs/monitoring/alerts.csv`.
 - Fraud labels here are complete; production labels are partial, which affects calibration.
 - False positives cost reviewer hours and user friction — monitor appeal/reversal rates
   after any auto-block goes live.
+
+## Since v1: exposure, root cause and compliance
+
+- **$93,476.68** of fraud in 2025, fully attributed (takeover $41.0k, rings $52.5k); total
+  fraud cost **$81,967.51**, or **$683 per confirmed takeover**.
+- Every takeover passed an unseen device with no step-up; 102 of 120 kept a live session after
+  the password reset. Acting within 30 minutes of the first signal would have stopped 98.9% of
+  takeover value — the loss is an enforcement gap, not a detection gap.
+- Controls cost **$9,457** for the quarter (deduplicated), of which $2,560 is false-positive cost.
+  Two rules are flagged for escalation: R08 (precision 0.19 → 0.02) and R03 (0.16 → 0.09).
+- 24 obligations mapped India-first (RBI, PMLA/FIU-IND, DPDP, SEBI) across EU, UK, US and global
+  standards; 17 have generated evidence, verified on every run.
 
 ## Bottom line
 

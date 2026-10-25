@@ -1,0 +1,26 @@
+table,check,violations,rows,severity,detail
+users,unique_user_id,0,5100,pass,user_id must identify one row
+users,no_future_signup_date,0,5100,pass,event time cannot be in the future
+users,no_null_keys,0,5100,pass,checked 1 key columns
+devices,unique_device_id,0,7150,pass,device_id must identify one row
+devices,no_future_first_seen_date,0,7150,pass,event time cannot be in the future
+devices,no_null_keys,0,7150,pass,checked 1 key columns
+login_attempts,unique_attempt_id,0,162778,pass,attempt_id must identify one row
+login_attempts,no_future_timestamp,0,162778,pass,event time cannot be in the future
+login_attempts,no_null_keys,0,162778,pass,checked 4 key columns
+login_attempts,fk_user_id_in_users,0,162778,pass,user_id must resolve to users
+login_attempts,fk_device_id_in_devices,0,162778,pass,device_id must resolve to devices
+password_resets,unique_reset_id,0,483,pass,reset_id must identify one row
+password_resets,no_future_request_timestamp,0,483,pass,event time cannot be in the future
+password_resets,no_null_keys,0,483,pass,checked 3 key columns
+password_resets,fk_user_id_in_users,0,483,pass,user_id must resolve to users
+password_resets,fk_device_id_in_devices,0,483,pass,device_id must resolve to devices
+transactions,unique_txn_id,0,61560,pass,txn_id must identify one row
+transactions,no_future_timestamp,0,61560,pass,event time cannot be in the future
+transactions,no_null_keys,0,61560,pass,checked 4 key columns
+transactions,fk_user_id_in_users,0,61560,pass,user_id must resolve to users
+transactions,fk_device_id_in_devices,0,61560,pass,device_id must resolve to devices
+login_attempts,ip_coordinates_valid,0,162778,pass,"ip_lat within +-90, ip_lon within +-180, not null"
+transactions,amount_positive,0,61560,pass,amount_usd must be greater than zero
+password_resets,completion_after_request,0,483,pass,complete_timestamp cannot precede request_timestamp
+all,label_columns_present,0,237071,pass,"is_fraud_attempt / is_fraud_reset / is_fraud_txn are synthetic ground truth, evaluation-only, excluded from every feature set"

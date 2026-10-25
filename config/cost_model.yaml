@@ -1,0 +1,72 @@
+# Loss and control-cost model.
+#
+# READ THIS FIRST: the two halves of this file are not the same kind of number.
+#
+#   `measured`  - recomputed from data/*.csv by src/ato/exposure.py on every pipeline run.
+#                Nothing is hard-coded here; see outputs/exposure/exposure_summary.csv.
+#   `assumptions` - planning inputs a real programme would take from its own finance and
+#                operations teams. They are stated here so the arithmetic is auditable and so
+#                a reader can substitute their own. They are NOT observed in this dataset and
+#                no conclusion in this repo should be quoted as a company loss figure.
+
+meta:
+  currency: USD
+  rate_basis: fully-loaded analyst cost (salary + tooling + overhead), one blended tier
+  review_queue_hours_per_week: 40
+
+assumptions:
+  review:
+    minutes_per_case: 12.0          # analyst time to work one queued account to a decision
+    cost_per_hour_usd: 28.00        # fully-loaded Tier-1 Trust & Safety analyst
+    appeal_rate_on_false_positive: 0.15   # share of wrongly-actioned customers who appeal
+    appeal_minutes: 8.0             # handling one appeal end to end
+
+  friction:
+    step_up_seconds: 90             # added time before a legitimate customer completes login
+    step_up_abandon_rate: 0.04      # share of step-up prompts abandoned
+    session_value_usd: 18.00        # gross margin at risk when an abandoned session is lost
+    hard_block_support_minutes: 14  # ticket + goodwill cost of wrongly blocking a real customer
+    hard_block_churn_rate: 0.20     # share of wrongly hard-blocked customers who do not return
+
+  loss:
+    recovery_rate_on_confirmed_fraud: 0.25   # share of fraudulent value clawed back
+    dispute_cost_per_case_usd: 45.00         # chargeback / dispute handling per confirmed case
+    account_remediation_minutes: 35.0        # re-verification and document re-collection per ATO
+    non_financial_harm_usd_per_incident: 0.0 # left at zero on purpose; do not invent reputation cost
+
+  enforcement_latency:
+    # Value still leaving the account after the point at which a rule had already fired.
+    # Measured per confirmed incident; these are the action SLAs the programme commits to.
+    target_minutes_to_action: 30
+
+actions:
+  # What each disposition in detection_rules.yaml actually costs, keyed by disposition rather than by
+  # rule id so adding a rule cannot leave this block stale - the hand-written per-rule list this
+  # replaced was out of date the moment R11 was added. `analyst_minutes` is staff time the alert
+  # consumes; `wrongly_actioned` says whether a false positive does something to a real customer,
+  # which is what makes a false positive expensive rather than merely annoying.
+  auto_block:
+    analyst_minutes: 4.0            # triage of the blocked attempt, lighter than a full case
+    wrongly_actioned: hard_block
+    description: deny the session and notify the account owner
+  review:
+    analyst_minutes: 12.0           # same figure as review.minutes_per_case
+    wrongly_actioned: queue_only
+    description: open a case in the review queue
+  step_up:
+    analyst_minutes: 0.0            # a challenge that clears costs no staff time
+    wrongly_actioned: friction
+    description: demand a second factor before continuing
+  hold:
+    analyst_minutes: 6.0            # ops time to release or escalate a held payout
+    wrongly_actioned: delayed_funds
+    description: defer settlement until the account ages out of the takeover window
+  monitor:
+    analyst_minutes: 0.0
+    wrongly_actioned: none
+    description: record the signal and feed the model, no customer-facing action
+
+decision:
+  # Verdicts are computed from measurable facts, never from an invented dollar break-even. A rule is
+  # called out only when the data shows one of these conditions holding.
+  capacity_share_of_queue: 0.25     # no single rule should take more than a quarter of daily capacity

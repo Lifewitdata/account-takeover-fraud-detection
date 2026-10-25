@@ -1,0 +1,16 @@
+feature,rows_compared,max_abs_diff,mismatch_count,status
+distance_km,162778,2.7284841053187847e-12,0,tolerated
+hours_since_last,162778,0.0,0,match
+speed_kmh,162778,2.842170943040401e-14,0,tolerated
+impossible_travel,162778,0.0,0,match
+new_device,162778,0.0,0,match
+new_country,162778,0.0,0,match
+u_att,162778,0.0,0,match
+u_failed,162778,0.0,0,match
+i_att,162778,0.0,0,match
+i_failed,162778,0.0,0,match
+i_users,162778,0.0,0,match
+device_n_users,162778,0.0,0,match
+ip_n_users,162778,0.0,0,match
+hour,162778,0.0,0,match
+dow,162778,0.0,0,match

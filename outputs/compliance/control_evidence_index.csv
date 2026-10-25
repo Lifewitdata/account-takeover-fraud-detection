@@ -1,0 +1,12 @@
+rule_id,surface,disposition,action_units,fraud_units,precision,verdict,control_name,stage,last_fired_ts,operated_in_period,evidence_files
+R01_ip_velocity_5u10m,login,auto_block,2192,2192,1.0,costs more than it saves,IP credential-stuffing velocity,detective,2025-12-30 20:39:57,True,outputs/exposure/control_cost.csv|outputs/monitoring/rule_kpi_weekly.csv
+R02_shared_device_5u,login,review,353,353,1.0,costs more than it saves,Shared device ring,detective,2025-12-30 20:39:57,True,outputs/exposure/control_cost.csv|outputs/monitoring/rule_kpi_weekly.csv
+R03_new_device_step_up,login,step_up,3902,353,0.0905,keep,First-seen device,preventive,2025-12-30 23:31:45,True,outputs/exposure/control_cost.csv|outputs/monitoring/rule_kpi_weekly.csv
+R04_impossible_travel,login,monitor,213,16,0.0751,"signal only, no action taken",Impossible travel,detective,2025-12-30 20:27:06,True,outputs/exposure/control_cost.csv|outputs/monitoring/rule_kpi_weekly.csv
+R09_model_score,login,review,353,353,1.0,costs more than it saves,Risk model score,detective,2025-12-30 20:39:57,True,outputs/exposure/control_cost.csv|outputs/monitoring/rule_kpi_weekly.csv
+R10_ip_neighbourhood,login,monitor,2195,2195,1.0,"signal only, no action taken",Shared IP neighbourhood,detective,2025-12-30 20:39:57,True,outputs/exposure/control_cost.csv|outputs/monitoring/rule_kpi_weekly.csv
+R05_reset_then_payout,payment,hold,38,38,1.0,keep,Credential reset followed by payout,preventive,2025-12-27 10:34:31,True,outputs/exposure/control_cost.csv|outputs/monitoring/rule_kpi_weekly.csv
+R06_new_device_payout,payment,step_up,1,0,0.0,no measured benefit,New device then payout,preventive,2025-11-12 18:59:46,True,outputs/exposure/control_cost.csv|outputs/monitoring/rule_kpi_weekly.csv
+R07_amount_zscore_spike,payment,review,125,5,0.04,costs more than it saves,Amount outside personal history,detective,2025-12-30 23:19:24,True,outputs/exposure/control_cost.csv|outputs/monitoring/rule_kpi_weekly.csv
+R08_convertible_category,payment,monitor,1554,36,0.0232,"signal only, no action taken",High-conversion merchant category,detective,2025-12-30 22:43:56,True,outputs/exposure/control_cost.csv|outputs/monitoring/rule_kpi_weekly.csv
+R11_recent_new_device_login,payment,hold,46,39,0.8478,keep,Payout after an unresolved new-device login,preventive,2025-12-28 18:24:51,True,outputs/exposure/control_cost.csv|outputs/monitoring/rule_kpi_weekly.csv

@@ -1,0 +1,9 @@
+kpi_id,name,value,unit,threshold,status,detail,source,as_of
+K01_detection_rate,Fraud attempts detected per week,346.0,count,weekly mean 158.7,ok,"fraud login attempts hit by an actioning rule, week of 2025-12-29",outputs/monitoring/rule_kpi_weekly.csv,2025-12-31
+K02_rule_precision,Per-rule precision on labelled outcomes,0.0232,ratio,decay alert at -20% vs baseline,escalate,lowest current precision: R08_convertible_category,outputs/monitoring/rule_kpi_weekly.csv,2025-12-31
+K03_reviewer_load,Cases per analyst per day,5.25,cases/day,capacity 30,ok,"deduplicated review cases opened per day, test window",outputs/monitoring/kpi_latest.csv,2025-12-31
+K04_feature_psi,Maximum feature PSI vs baseline,0.192,index,severe from 0.25,moderate,legitimate-only max: payment.is_first_category; all-rows max 0.2028 on login.ip_n_users,outputs/monitoring/drift_features.csv,2025-12-31
+K05_false_positive_cost,Weekly cost of wrongly-actioned customers,182.85,USD/week,trend only,ok,programme wrongly-actioned cost / weeks in window,outputs/exposure/control_cost.csv,2025-12-31
+K06_loss_prevented,Fraudulent value stopped before payout completed,9072.25,USD,of 10232.18 payment fraud,ok,"fraud payments flagged by a hold or step-up rule before completion, test window",outputs/exposure/loss_model.csv,2025-12-31
+K07_time_to_action,Median minutes between first qualifying signal and first payout (the action window),554.5,minutes,action SLA 30,ok,"median signal-to-first-payout window; 98% of chains leave at least the 30-minute SLA, so loss past it is an enforcement gap, not detection",outputs/incidents/incident_chains.csv,2025-12-31
+K08_compliance_evidence,Reporting obligations with generated evidence in the period,1.0,ratio,1.0,ok,obligations marked evidence_generated whose artifact exists and is non-empty,outputs/compliance/obligation_status.csv,2025-12-31

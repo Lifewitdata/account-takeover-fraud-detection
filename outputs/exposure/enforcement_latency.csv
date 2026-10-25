@@ -1,0 +1,9 @@
+act_within_minutes,incidents_with_a_stoppable_payout,payouts_stoppable,value_stoppable_usd,share_of_chain_fraud_value,share_of_all_fraud_value,chain_fraud_value_usd,all_fraud_value_usd,value_lost_per_extra_15min_of_delay_usd,within_current_target
+0,120,237,40727.43,0.9931,0.4357,41008.68,93476.68,,True
+15,120,236,40651.24,0.9913,0.4349,41008.68,93476.68,76.19,True
+30,120,235,40558.9,0.989,0.4339,41008.68,93476.68,92.34,True
+60,120,235,40558.9,0.989,0.4339,41008.68,93476.68,0.0,False
+120,118,225,38679.1,0.9432,0.4138,41008.68,93476.68,469.95,False
+240,113,208,35753.41,0.8718,0.3825,41008.68,93476.68,365.71,False
+480,100,164,29683.69,0.7238,0.3176,41008.68,93476.68,379.36,False
+1440,16,29,4914.52,0.1198,0.0526,41008.68,93476.68,387.02,False

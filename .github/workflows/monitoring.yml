@@ -1,0 +1,44 @@
+name: weekly-monitoring
+
+# Mirrors config/monitoring.yaml schedule.cadence_cron. GitHub cron is UTC.
+on:
+  schedule:
+    - cron: "17 6 * * MON"
+  workflow_dispatch:
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: |
+          pip install -r requirements.txt
+          pip install -e . --no-deps
+      - name: Run pipeline
+        run: python -m ato.pipeline
+      - name: Publish KPIs and open alerts to the job summary
+        run: |
+          python - <<'EOF' >> "$GITHUB_STEP_SUMMARY"
+          import pandas as pd
+          k = pd.read_csv("outputs/monitoring/kpi_latest.csv")
+          a = pd.read_csv("outputs/monitoring/alerts.csv")
+          print("## KPIs\n\n```")
+          print(k[["kpi_id", "value", "unit", "threshold", "status"]].to_string(index=False))
+          print(f"```\n\n## Open alerts ({len(a)})\n\n```")
+          print(a[["source", "subject", "severity", "evidence", "due_by"]].to_string(index=False))
+          print("```")
+          EOF
+      - uses: actions/upload-artifact@v4
+        with:
+          name: monitoring-${{ github.run_id }}
+          path: |
+            outputs/monitoring/
+            outputs/exposure/
+            outputs/compliance/obligation_status.csv
+          retention-days: 90

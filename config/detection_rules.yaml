@@ -1,0 +1,137 @@
+# Detection rule registry.
+#
+# Every rule has a stable id used by the other layers:
+#   - config/compliance_matrix.csv maps rule_id -> regulatory obligation
+#   - src/ato/monitoring.py computes per-rule KPIs and drift against baseline_rule_metrics.csv
+#   - src/ato/exposure.py prices per-rule true/false positive outcomes
+#   - outputs/incidents/rca_summary.csv attributes confirmed-incident stages to rule_id
+#
+# `predicate` is evaluated by src/ato/rules.py against the login-level or transaction-level
+# feature frame. Keep predicates free of label columns (is_fraud_*) - they are evaluation-only.
+
+rules:
+  - id: R01_ip_velocity_5u10m
+    name: IP credential-stuffing velocity
+    surface: login
+    predicate: "i_users >= 5"
+    disposition: auto_block
+    stage: detective
+    rationale: >
+      One IP address driving attempts against 5 or more distinct accounts inside a single
+      10-minute bucket is list-based attack traffic, not a travelling customer.
+
+  - id: R02_shared_device_5u
+    name: Shared device ring
+    surface: login
+    predicate: "device_n_users >= 5"
+    disposition: review
+    stage: detective
+    rationale: >
+      A device seen against 5 or more accounts indicates pooled hardware - the infrastructure
+      fingerprint of an organised ring rather than a family device.
+
+  - id: R03_new_device_step_up
+    name: First-seen device
+    surface: login
+    predicate: "new_device == 1"
+    disposition: step_up
+    stage: preventive
+    rationale: >
+      Strongest single-account signal in this dataset (14.4% fraud vs 6.3% on known devices).
+      Too broad to block, correct trigger for additional authentication.
+
+  - id: R04_impossible_travel
+    name: Impossible travel
+    surface: login
+    predicate: "impossible_travel == 1"
+    disposition: monitor
+    stage: detective
+    rationale: >
+      Kept as a weak corroborating signal only. It catches 0.5% of fraud attempts here because
+      takeovers follow long idle gaps, so it must never be a gate.
+
+  - id: R05_reset_then_payout
+    name: Credential reset followed by payout
+    surface: payment
+    predicate: "hours_since_reset <= 24 and amount_usd >= 100"
+    disposition: hold
+    stage: preventive
+    rationale: >
+      The classic takeover-to-cash chain: reset the password on a new device, then drain value
+      through a convertible category before the owner notices.
+
+  - id: R06_new_device_payout
+    name: New device then payout
+    surface: payment
+    predicate: "paid_on_new_device == 1 and amount_usd >= 100"
+    disposition: step_up
+    stage: preventive
+    rationale: >
+      Payment made from a device this account had never authenticated from before. Kept because it
+      is the intuitive rule, and measured because it does not work: an attacker who logs in on a
+      new device makes that device known before spending, so in the held-out window this rule fires
+      once and catches no fraud. See R11, which carries the login-level signal forward instead.
+
+  - id: R11_recent_new_device_login
+    name: Payout after an unresolved new-device login
+    surface: payment
+    predicate: "hours_since_new_device_login <= 24 and amount_usd >= 100"
+    disposition: hold
+    stage: preventive
+    rationale: >
+      A successful login from a first-seen device inside the last 24 hours, followed by material
+      spend. This is the takeover-to-cash chain read from the correct side - the signal is observed
+      at authentication and remembered at payment. 73.4% of fraud transactions in the held-out
+      window qualify against 0.9% of legitimate ones.
+
+  - id: R07_amount_zscore_spike
+    name: Amount outside personal history
+    surface: payment
+    predicate: "amount_zscore >= 6"
+    disposition: review
+    stage: detective
+    rationale: >
+      Spend far outside the account's own trailing distribution. Personal baselines beat
+      population thresholds because legitimate high spenders exist.
+
+  - id: R08_convertible_category
+    name: High-conversion merchant category
+    surface: payment
+    predicate: "merchant_category in ['gift_cards', 'jewelry', 'digital_goods']"
+    disposition: monitor
+    stage: detective
+    rationale: >
+      Stolen value has to be laundered quickly; gift cards, jewelry and digital goods are the
+      conversion rails. In this data 1,149 of 1,238 fraud transactions sit in these three
+      categories, so the flag is used to widen review, never to decline on its own.
+
+  - id: R09_model_score
+    name: Risk model score
+    surface: login
+    predicate: "risk_score >= 0.5"
+    disposition: review
+    stage: detective
+    rationale: >
+      The ranked review queue. Combines the sharing and velocity features that dominate
+      importance; thresholds are re-tuned from monitoring rather than fixed in code.
+
+  - id: R10_ip_neighbourhood
+    name: Shared IP neighbourhood
+    surface: login
+    predicate: "ip_n_users >= 10"
+    disposition: monitor
+    stage: detective
+    rationale: >
+      Whole-account expansion after one confirmed hit: when an IP is reused by 10+ accounts,
+      every account on it is re-scored together.
+
+defaults:
+  bucket_minutes: 10
+  personal_history_days: 90
+  min_history_for_zscore: 5
+  # Ring graph parameters. Both are measured, not guessed: device fan-out over fraudulent logins is
+  # trimodal (120 devices touch 1 account, 10 touch 20, 25 touch 60), so a ceiling of 25 keeps the
+  # five 20-account rings and drops the 60-account credential-stuffing fixtures. min_accounts is the
+  # smallest cluster a reviewer would call a ring rather than a coincidence.
+  ring_min_accounts: 10
+  ring_max_fanout: 25

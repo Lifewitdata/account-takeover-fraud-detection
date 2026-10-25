@@ -1,0 +1,14 @@
+# The verification harness compares regenerated CSVs against the committed ones by value,
+# and the notebooks read these files directly. Normalising line endings on checkout would
+# change row parsing on macOS/Linux, so CSV/PAR bytes stay exactly as committed.
+*.csv    -text
+*.parquet -text
+*.png    binary
+*.joblib binary
+
+*.py     text eol=lf
+*.sql    text eol=lf
+*.md     text eol=lf
+*.yaml   text eol=lf
+*.yml    text eol=lf
+*.ipynb  text eol=lf

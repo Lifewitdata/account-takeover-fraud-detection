@@ -1,0 +1,4 @@
+surface,period,rows_scored,rows_flagged_by_any_rule,review_cases_opened,review_cases_cost_usd,row_action_analyst_cost_usd,fraud_rows_touched,legit_rows_hard_blocked,legit_rows_held,legit_rows_stepped_up,legit_rows_queued_only,wrongly_actioned_cost_usd,total_control_cost_usd,fraud_value_touched_usd,recovered_value_usd,customers_churned_count
+login,test_window_Oct-Dec,39990.0,5936.0,353.0,1976.8,6068.53,2222.0,0.0,0.0,3549.0,0.0,2555.28,8623.81,9598.07,2399.52,0.0
+payment,test_window_Oct-Dec,15035.0,1685.0,125.0,700.0,828.8,49.0,0.0,7.0,1.0,120.0,4.64,833.44,9772.46,2443.11,0.0
+ALL,test_window_Oct-Dec,55025.0,7621.0,478.0,2676.8,6897.33,2271.0,0.0,7.0,3550.0,120.0,2559.92,9457.25,19370.53,4842.63,0.0

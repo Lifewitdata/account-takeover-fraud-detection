@@ -1,0 +1,4 @@
+primary_root_cause,incidents,accounts,fraud_value_usd,fix,owner
+RC-02,120,120,41008.68,Promote a successful login on an unseen device to a step-up challenge before the session is granted full privileges; treat the resulting session as limited until the challenge clears.,Authentication engineering
+RC-03,25,172,0.0,"Rate-limit per IP and per account, lock out on sustained failure, and screen candidate passwords against known-breach corpora before accepting them (NIST SP 800-63B).",Application security
+RC-09,5,100,52468.0,"Cap enrolments per device and per IP, and hold a cluster that registered together out of payout eligibility until it has been verified separately.",Identity and onboarding

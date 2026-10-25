@@ -1,0 +1,5 @@
+edge_basis,fanout_ceiling,components,largest_component_accounts,accounts_in_components,fraud_value_usd_in_components
+device_id,none,6,1297,1397,65735.45
+device_id,25,5,20,100,52468.0
+ip_address,none,6,1297,1397,65735.45
+ip_address,25,5,20,100,52468.0

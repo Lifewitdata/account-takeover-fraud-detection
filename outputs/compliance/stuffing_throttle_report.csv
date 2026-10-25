@@ -1,0 +1,7 @@
+ip_address,attempts,accounts_tried,failed,first_ts,last_ts,accounts_authenticated,failed_share,nist_800_63b_action
+160.127.9.158,390,60,383,2025-10-13 20:28:33,2025-10-13 20:43:01,7,0.9821,"rate-limit IP, force breached-password check on targeted accounts"
+158.61.10.103,378,60,372,2025-12-19 07:08:00,2025-12-19 07:22:58,6,0.9841,"rate-limit IP, force breached-password check on targeted accounts"
+192.32.150.153,376,60,366,2025-10-24 04:27:23,2025-10-24 04:42:11,10,0.9734,"rate-limit IP, force breached-password check on targeted accounts"
+96.83.12.50,353,60,348,2025-12-07 20:07:48,2025-12-07 20:19:56,8,0.9858,"rate-limit IP, force breached-password check on targeted accounts"
+114.156.202.220,349,60,343,2025-11-26 10:10:34,2025-11-26 10:24:50,6,0.9828,"rate-limit IP, force breached-password check on targeted accounts"
+82.147.99.210,346,60,344,2025-12-30 20:25:39,2025-12-30 20:39:57,2,0.9942,"rate-limit IP, force breached-password check on targeted accounts"

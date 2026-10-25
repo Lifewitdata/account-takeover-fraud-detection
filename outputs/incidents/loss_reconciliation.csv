@@ -1,0 +1,6 @@
+incident_type,accounts,fraud_txn_value_usd,share_of_fraud_value,overlap_with_previous_lines,note
+account_takeover,120,41008.68,0.4387,0,one row per account with a confirmed fraudulent password reset
+fraud_ring,100,52468.0,0.5613,0,5 device-linked components recovered at a fan-out ceiling of 25
+credential_stuffing,0,0.0,0.0,7,"172 accounts authenticated by a campaign; every one that billed is already booked above, so the incremental loss here is measured, not assumed"
+UNATTRIBUTED,0,0.0,0.0,0,fraudulent transaction value no reconstructed incident explains
+TOTAL_MEASURED_FRAUD,220,93476.68,1.0,0,every is_fraud_txn row in data/transactions.csv

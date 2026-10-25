@@ -1,0 +1,5 @@
+raised_on,source,subject,severity,evidence,due_by,owner,decision
+2025-12-31,rule_decay,R03_new_device_step_up,escalate,precision fell 44% vs baseline,2026-01-07,Trust & Safety analytics,
+2025-12-31,rule_decay,R08_convertible_category,escalate,precision fell 88% vs baseline,2026-01-07,Trust & Safety analytics,
+2025-12-31,kpi,K02_rule_precision,escalate,0.0232 ratio vs decay alert at -20% vs baseline,2026-01-02,Trust & Safety analytics,
+2025-12-31,kpi,K04_feature_psi,moderate,0.192 index vs severe from 0.25,2026-01-02,Trust & Safety analytics,

@@ -1,0 +1,11 @@
+surface,k,precision,fraud_rows_in_window
+login,100,1.0,2224
+login,500,1.0,2224
+login,1000,1.0,2224
+login,2000,1.0,2224
+login,5000,0.4446,2224
+payment,25,1.0,56
+payment,50,1.0,56
+payment,100,0.56,56
+payment,250,0.224,56
+payment,500,0.112,56

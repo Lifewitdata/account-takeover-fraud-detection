@@ -1,0 +1,17 @@
+surface,threshold,period,alerts_rows,fraud_rows,legit_rows,accounts_in_alerts,precision_on_rows,recall_on_rows,alerts_per_day,accounts_per_day,queue_utilisation,within_capacity,fraud_value_caught_usd,fraud_value_missed_usd,fraud_value_total_usd,recovered_value_usd,unrecovered_loss_usd,analyst_cost_usd,appeal_cost_usd,net_exposure_usd,is_default_threshold
+login,0.3,test_window_Oct-Dec,2195,2195,0,353,1.0,0.987,24.12,3.88,0.129,True,199.95,10232.18,10232.18,49.99,7674.14,12292.0,0.0,19916.15,False
+login,0.4,test_window_Oct-Dec,2195,2195,0,353,1.0,0.987,24.12,3.88,0.129,True,199.95,10232.18,10232.18,49.99,7674.14,12292.0,0.0,19916.15,False
+login,0.5,test_window_Oct-Dec,2195,2195,0,353,1.0,0.987,24.12,3.88,0.129,True,199.95,10232.18,10232.18,49.99,7674.14,12292.0,0.0,19916.15,True
+login,0.6,test_window_Oct-Dec,2195,2195,0,353,1.0,0.987,24.12,3.88,0.129,True,199.95,10232.18,10232.18,49.99,7674.14,12292.0,0.0,19916.15,False
+login,0.7,test_window_Oct-Dec,2195,2195,0,353,1.0,0.987,24.12,3.88,0.129,True,199.95,10232.18,10232.18,49.99,7674.14,12292.0,0.0,19916.15,False
+login,0.8,test_window_Oct-Dec,2195,2195,0,353,1.0,0.987,24.12,3.88,0.129,True,199.95,10232.18,10232.18,49.99,7674.14,12292.0,0.0,19916.15,False
+login,0.9,test_window_Oct-Dec,2195,2195,0,353,1.0,0.987,24.12,3.88,0.129,True,199.95,10232.18,10232.18,49.99,7674.14,12292.0,0.0,19916.15,False
+login,0.95,test_window_Oct-Dec,2195,2195,0,353,1.0,0.987,24.12,3.88,0.129,True,199.95,10232.18,10232.18,49.99,7674.14,12292.0,0.0,19916.15,False
+payment,0.3,test_window_Oct-Dec,56,56,0,29,1.0,1.0,0.62,0.32,0.011,True,10232.18,0.0,10232.18,2558.05,0.0,313.6,0.0,-2244.45,False
+payment,0.4,test_window_Oct-Dec,56,56,0,29,1.0,1.0,0.62,0.32,0.011,True,10232.18,0.0,10232.18,2558.05,0.0,313.6,0.0,-2244.45,False
+payment,0.5,test_window_Oct-Dec,56,56,0,29,1.0,1.0,0.62,0.32,0.011,True,10232.18,0.0,10232.18,2558.05,0.0,313.6,0.0,-2244.45,True
+payment,0.6,test_window_Oct-Dec,56,56,0,29,1.0,1.0,0.62,0.32,0.011,True,10232.18,0.0,10232.18,2558.05,0.0,313.6,0.0,-2244.45,False
+payment,0.7,test_window_Oct-Dec,56,56,0,29,1.0,1.0,0.62,0.32,0.011,True,10232.18,0.0,10232.18,2558.05,0.0,313.6,0.0,-2244.45,False
+payment,0.8,test_window_Oct-Dec,56,56,0,29,1.0,1.0,0.62,0.32,0.011,True,10232.18,0.0,10232.18,2558.05,0.0,313.6,0.0,-2244.45,False
+payment,0.9,test_window_Oct-Dec,55,55,0,29,1.0,0.9821,0.6,0.32,0.011,True,10194.73,37.45,10232.18,2548.68,28.09,308.0,0.0,-2212.59,False
+payment,0.95,test_window_Oct-Dec,53,53,0,28,1.0,0.9464,0.58,0.31,0.01,True,9659.39,572.79,10232.18,2414.85,429.59,296.8,0.0,-1688.46,False

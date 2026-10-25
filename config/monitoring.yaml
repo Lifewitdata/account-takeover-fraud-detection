@@ -1,0 +1,89 @@
+# Monitoring configuration - src/ato/monitoring.py and the scheduled workflow read this.
+#
+# The point of this file is that "re-tune monthly" is a mechanism, not an intention: each KPI
+# has a window, a baseline, a drift test and an action threshold that a run can evaluate.
+
+windows:
+  period: W-SUN          # pandas resample rule; weekly buckets
+  baseline_start: "2025-01-01"
+  baseline_end: "2025-09-30"    # the training period - rules were tuned on this
+  current_start: "2025-10-01"
+  current_end: "2025-12-31"     # the held-out period - drift is measured here
+  min_weekly_events: 50         # weeks below this are reported but excluded from drift maths
+
+drift:
+  # Population Stability Index on each scoring feature, baseline weeks vs current weeks.
+  psi:
+    bins: 10
+    stable_below: 0.10
+    moderate_from: 0.10
+    severe_from: 0.25
+  # Two-sample Kolmogorov-Smirnov on the same feature pairs.
+  ks:
+    alert_above: 0.10
+    p_value_alert_below: 0.001
+  # Rule-level efficacy decay: current precision/recall against the baseline value.
+  rule_decay:
+    relative_drop_alert: 0.20    # 20% worse than baseline -> review threshold
+    relative_drop_stop: 0.40     # 40% worse -> escalate to model owner
+  # Share of the scored queue the model still ranks correctly.
+  precision_at_k:
+    k: 2000
+    alert_below: 0.90
+
+thresholds:
+  # Candidate action thresholds evaluated against cost, not just accuracy.
+  grid: [0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95]
+  default: 0.5
+  review_capacity_cases_per_day: 30   # what the queue can actually absorb
+
+schedule:
+  cadence_cron: "17 6 * * MON"        # 06:17 UTC Mondays; odd minute avoids :00 herd effects
+  owner: Trust & Safety analytics
+  sla: >
+    A drift alert is triaged within two business days; a rule breaching relative_drop_stop is
+    either re-thresholded or disabled within five, with the decision written to
+    the decision column of outputs/monitoring/alerts.csv.
+
+kpis:
+  - id: K01_detection_rate
+    name: Fraud attempts detected per week
+    unit: count
+    source: outputs/monitoring/rule_kpi_weekly.csv
+    why: >
+      The volume signal. A fall with a stable fraud base means a rule has stopped firing.
+  - id: K02_rule_precision
+    name: Per-rule precision on labelled outcomes
+    unit: ratio
+    source: outputs/monitoring/rule_kpi_weekly.csv
+    why: Reviewer time is the scarce resource; precision decay is what burns it.
+  - id: K03_reviewer_load
+    name: Cases per analyst per day
+    unit: count
+    source: outputs/monitoring/kpi_latest.csv
+    why: Keeps the queue a staffing decision rather than a model decision.
+  - id: K04_feature_psi
+    name: Maximum feature PSI vs baseline
+    unit: index
+    source: outputs/monitoring/drift_features.csv
+    why: Input drift precedes accuracy loss; it is the earliest available warning.
+  - id: K05_false_positive_cost
+    name: Weekly cost of wrongly-actioned customers
+    unit: USD
+    source: outputs/exposure/control_cost.csv
+    why: Translates rule behaviour into the line a finance partner reads.
+  - id: K06_loss_prevented
+    name: Fraudulent value stopped before payout completed
+    unit: USD
+    source: outputs/exposure/loss_model.csv
+    why: The gross-margin argument for keeping the queue funded.
+  - id: K07_time_to_action
+    name: Median minutes between first qualifying signal and first payout (the action window)
+    unit: minutes
+    source: outputs/incidents/incident_chains.csv
+    why: Exposure accrues while an open incident does; this is the latency KPI.
+  - id: K08_compliance_evidence
+    name: Reporting obligations with generated evidence in the period
+    unit: ratio
+    source: outputs/compliance/obligation_status.csv
+    why: Turns an audit question into a file that already exists.

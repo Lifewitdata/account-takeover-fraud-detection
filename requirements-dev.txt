@@ -1,0 +1,5 @@
+# Extra deps for the test suite and the SQL verification harness only.
+# The pipeline itself never imports these.
+pytest>=8.0
+duckdb>=1.0
+sqlglot>=25.0
